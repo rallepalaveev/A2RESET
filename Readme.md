@@ -17,6 +17,7 @@ I hope it can be useful to someone.
 
 The code listing:
 E000-   A0 00       LDY   #$00
+
 E002-   B9 00 E0    LDA   $E000,Y
 E005-   99 00 03    STA   $0300,Y
 E008-   C8          INY

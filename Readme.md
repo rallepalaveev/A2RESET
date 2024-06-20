@@ -15,3 +15,23 @@ In essence, what the card does is:
 
 I hope it can be useful to someone.
 
+The code listing:
+E000-   A0 00       LDY   #$00
+E002-   B9 00 E0    LDA   $E000,Y
+E005-   99 00 03    STA   $0300,Y
+E008-   C8          INY
+E009-   D0 F7       BNE   $2002
+E00B-   4C 0E 03    JMP   $030E
+E00E-   AD 03 30    LDA   $3003
+E011-   AD 03 30    LDA   $3003
+E014-   6C FC FF    JMP   ($FFFC)
+E017-   00          BRK
+E018-   00          BRK
+E019-   00          BRK
+E01A-   00          BRK
+.....   ..          ...   .......
+FFF9-   00          BRK
+FFFA-   00          BRK
+FFFB-   E0 00       CPX   #$00
+FFFD-   E0 00       CPX   #$00
+FFFF-   E0 00       CPX   #$00

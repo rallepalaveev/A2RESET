@@ -1,7 +1,8 @@
 1x 27C64
 1x ATF22V10C
-2x 1n4148
+2x 1N4148
 2x 100nF
+1x 100uF
 1x 5kohm
 1x 2-pin header
 1x push button

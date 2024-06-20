@@ -1,4 +1,4 @@
-A2COLDRESET is a controller card project for Apple 2 computers, which has an external button, which, when pressed, performs cold restart of the computer, similar to what the open-apple reset does on the Apple 2e.
+A2COLDRESET is a controller card project for Apple 2 computers. the card has an external button, which, when pressed, performs cold restart of the computer, similar to what the open-apple reset does on the Apple 2e.
 
 The benefit is for computers without this capability so that the computer does not need to go through a power cycle to do the cold restart - it is achieved at the push of a buton.
 

@@ -8,8 +8,6 @@ Assembly  None;
 Location  None;
 Device    g22V10;
 
-/* This is for COLD-RESET Card */
-
 PIN 1      = RESET;
 PIN 2      = RW;
 PIN 3      = A15;

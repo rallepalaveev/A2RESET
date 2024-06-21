@@ -2,7 +2,7 @@ A2COLDRESET is a controller card project for Apple 2 computers. The card has an 
 
 The benefit is for computers without this capability so that the computer does not need to go through a power cycle to do the cold restart - it is achieved at the push of a buton.
 
-The project is based on my A2RAM128 Saturn clone card, as the circuitry is very similar. I only needed to add a diode and a resistor, reprogram the PLD and change the RAM for an ROM to hold some code.
+The project is based on my A2RAM128 Saturn clone card, as the circuitry is very similar. I only needed to add a diode and a resistor, reprogram the PLD and change the RAM for a ROM to hold some code.
 
 In essence, what the card does is:
 

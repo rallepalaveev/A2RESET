@@ -9,7 +9,7 @@ In essence, what the card does is:
 1. When "normal" RESET is issued the card is deactivated.
 2. When the external button is pressed, the card activates and issues system RESET in sync with the button and inhibits the Apple2's ROM memory, activating its own ROM memory.
 3. Upon release of the button, the $FFFC vector is issued, which starts the program on the ROM of the card.
-4. The program self-moves to $0300 and excutes from there, in the meantime zeroing most of $0300-$03FF, including $03F3 anf $03F4.
+4. The program self-moves to $0300-$03FF and excutes from there, in the meantime zeroing most of $0300-$03FF, including $03F3 anf $03F4.
 5. The program disables the card by a softswitch - access to address $3003 (randomly chosen by me :))
 6. The program then performs a relative jump to $(FFFC) - the original reset vector as the computer's ROM is already active. As the $03F4 checksum does not check out - the computer performs a cold reboot.
 

@@ -15,4 +15,4 @@ In essence, what the card does is:
 
 I hope it can be useful to someone.
 
-I have added new functionality to the firmware - v2.0. If you press the button quickly within 1 second then the computer prforms a warm reset and drops to monitor.
+I have added new functionality to the firmware - v2.0. If you press the button twice quickly within 1 second then the computer prforms a warm reset and drops to monitor.

@@ -2,13 +2,13 @@ FF00-   A0 50       LDY   #$50
 FF02-   B9 00 FF    LDA   $FF00,Y
 FF05-   99 00 03    STA   $0300,Y
 FF08-   88          DEY
-FF09-   D0 F7       BNE   $3F02
+FF09-   D0 F7       BNE   $FF02
 FF0B-   4C 0E 03    JMP   $030E
 FF0E-   AD 03 30    LDA   $3003
 FF11-   AD 03 30    LDA   $3003
 FF14-   AD F4 03    LDA   $03F4
 FF17-   C9 33       CMP   #$33
-FF19-   F0 1D       BEQ   $3F38
+FF19-   F0 1D       BEQ   $FF38
 FF1B-   A9 33       LDA   #$33
 FF1D-   8D F3 03    STA   $03F3
 FF20-   8D F4 03    STA   $03F4
@@ -17,11 +17,11 @@ FF25-   85 00       STA   $00
 FF27-   A0 FF       LDY   #$FF
 FF29-   A2 FF       LDX   #$FF
 FF2B-   CA          DEX
-FF2C-   D0 FD       BNE   $3F2B
+FF2C-   D0 FD       BNE   $FF2B
 FF2E-   88          DEY
-FF2F-   D0 FA       BNE   $3F2B
+FF2F-   D0 FA       BNE   $FF2B
 FF31-   C6 00       DEC   $00
-FF33-   D0 F2       BNE   $3F27
+FF33-   D0 F2       BNE   $FF27
 FF35-   6C FC FF    JMP   ($FFFC)
 FF38-   A9 69       LDA   #$69
 FF3A-   8D F2 03    STA   $03F2

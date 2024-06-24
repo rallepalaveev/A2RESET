@@ -15,4 +15,4 @@ In essence, what the card does is:
 
 I hope it can be useful to someone.
 
-I have added new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer performs a warm reset and drops to monitor.
+I have added new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer disables any anti-reset routines, performs a warm reset and drops to monitor.

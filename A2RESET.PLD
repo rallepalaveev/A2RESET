@@ -20,7 +20,6 @@ PIN 7      = A3;
 PIN 8      = A2;
 PIN 9      = A1;
 PIN 10     = A0;
-PIN 11     = DevSel;
 
 PIN 16     = CE;
 PIN 17     = BTN;

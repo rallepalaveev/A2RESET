@@ -1,12 +1,14 @@
 Name      A2RESET;
 Partno    00;
-Date      20/06/24;
+Date      06/02/24;
 Revision  01;
 Designer  Ralle Palaveev;
 Company   None;
 Assembly  None;
 Location  None;
 Device    g22V10;
+
+/* This is for A2RESET Card */
 
 PIN 1      = RESET;
 PIN 2      = RW;
@@ -26,7 +28,8 @@ PIN 19     = ACTIVE;
 
 OE         = !RW;
 EF         = A15 & A14 & A13;
-3xx3      = !A15 & !A14 & A13 & A12 & !A3 & !A2 & A1 & A0;
+3xx3       = !A15 & !A14 & A13 & A12 & !A3 & !A2 & A1 & A0;
 CE         = !(EF & ACTIVE);
 ACTIVE     = ACTIVE & !3xx3 & (RESET # !BTN) # !BTN;
+
 

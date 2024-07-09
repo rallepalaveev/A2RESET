@@ -1,0 +1,15 @@
+FFE3-   A0 F1       LDY   #$F1
+FFE5-   B9 00 FF    LDA   $FF00,Y
+FFE8-   99 00 03    STA   $0300,Y
+FFEB-   C8          INY
+FFEC-   D0 F7       BNE   $3FE5
+FFEE-   4C F1 03    JMP   $03F1
+FFF1-   AD 03 30    LDA   $3003
+FFF4-   AD 03 30    LDA   $3003
+FFF7-   6C FC FF    JMP   ($FFFC)
+FFFA-   E3          ???
+FFFB-   FF          ???
+FFFC-   E3          ???
+FFFD-   FF          ???
+FFFE-   E3          ???
+FFFF-   FF          ???

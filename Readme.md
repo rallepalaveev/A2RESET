@@ -7,7 +7,7 @@ The project is based on my A2RAM128 Saturn clone card, as the circuitry is very 
 In essence, what the card does is:
 
 1. When "normal" RESET is issued the card is deactivated (default state).
-2. When the external button is pressed, the card activates and issues system RESET in sync with the button and at the same time inhibiting the Apple2's ROM memoryand activating its own ROM memory.
+2. When the external button is pressed, this drives the RESET line low and the card activates which is inhibiting the Apple2's ROM memory and activating its own ROM memory. Note that pressing the Reset key does not drive the button line low.
 3. Upon release of the button, the $FFFC vector is issued, which starts the program on the ROM of the card.
 4. The program self-moves to $0300 and excutes from there, in the meantime destroying the correct checksum between $03F3 and #A5 in location $03F4.
 5. The program disables the card by a softswitch - access to address $3003 (randomly chosen by me :))

@@ -16,3 +16,7 @@ In essence, what the card does is:
 I hope it can be useful to someone.
 
 I have added a new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer disables any anti-reset routines, performs a warm reset and drops to monitor.
+
+As a follow up I made a completely new design based on a DMA functionality.
+
+Upon activation the card creates a single DMA write cycle to address $03F4, while the data bus is not driven, leading to a random byte being written to $03F4. Then, the DMA cycle is ended and the Reset line is aserted which causes cold reboot.

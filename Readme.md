@@ -17,7 +17,7 @@ I hope it can be useful to someone.
 
 I have added a new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer disables any anti-reset routines, performs a warm reset and drops to monitor.
 
-As a follow up I made a completely new design based on a DMA functionality - called A2DMA-RESET, design files insubfolder "DMA".
+As a follow up I made a completely new design based on a DMA functionality - called A2DMA-RESET, design files are in subfolder "DMA".
 
 Upon activation the card creates a single DMA write cycle to address $03F4, while the data bus is not driven, leading to a random byte being written to $03F4. Then, the DMA cycle is ended and the Reset line is asserted which causes cold reboot.
 Room for improvement: as the data bus is not driven, there is theoretical chance that the correct value is randomly hit and entered in $03F4, which would then do a warm reset, although the chances are negligible. The best solution, although more complex, would be to execute 2 DMA cycles - one reading $03F3 and the second - writing the value obtained to $03F4.

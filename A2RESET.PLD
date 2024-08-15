@@ -28,8 +28,8 @@ PIN 19     = ACTIVE;
 
 OE         = !RW;
 EF         = A15 & A14 & A13;
-3xx3       = !A15 & !A14 & A13 & A12 & !A3 & !A2 & A1 & A0;
+a3003      = !A15 & !A14 & A13 & A12 & !A3 & !A2 & A1 & A0;
 CE         = !(EF & ACTIVE);
-ACTIVE     = ACTIVE & !3xx3 & (RESET # !BTN) # !BTN;
+ACTIVE     = ACTIVE & !a3003 & (RESET # !BTN) # !BTN;
 
 

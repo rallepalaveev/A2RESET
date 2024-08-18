@@ -15,7 +15,7 @@ In essence, what the card does is:
 
 I hope it can be useful to someone.
 
-I have added a new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer disables any anti-reset routines, performs a warm reset and drops to monitor.
+I have added a new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer disables any anti-reset routines, performs a warm reset and drops to monitor. This feature can be useful for programs where there is an anti-reset implemented but the user wants to still break the program end explore what's in the memory. An example is the game Cannonball Blitz.
 
 As a follow up I made a completely new design based on a DMA functionality - called A2DMA-RESET, the design files are in subfolder "DMA".
 

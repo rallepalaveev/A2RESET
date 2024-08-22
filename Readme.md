@@ -23,8 +23,8 @@ Upon activation the card creates a single DMA write cycle to address $03F4, whil
 
 Room for improvements:
 
-As the data bus is not driven, there is theoretical chance that the correct value is randomly hit and entered in $03F4, which would then do a warm reset, although the chances are negligible. Some very good solutions, although more complex, would be to be able to drive the data bus and to do one of:
+As the data bus is not driven, there is theoretical chance that the correct value is randomly hit and entered in $03F4, which would then do a warm reset, although the chances of this hapenning are negligible. Some very good solutions, although more complex, would be to be able to drive the data bus and to do one of:
   - execute 2 DMA cycles - one reading $03F3 and the second - writing the value obtained to $03F4
   - execute 2 DMA write cycles and writing the same byte twice in $03F3 and $03F4
 
-Some LCs can remain active despite reset being asserted and this may be remedied by accessing $C081.
+Some LCs can remain active despite reset being asserted and this might be remedied by accessing $C081.

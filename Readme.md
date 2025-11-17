@@ -1,3 +1,5 @@
+# A2RESET card
+
 A2RESET is a controller card for Apple 2 computers. It has an external button, which, when pressed, performs cold restart of the computer, similar to what the open-apple reset does on the Apple 2e.
 
 The benefit is for computers without this capability so that the computer does not need to go through a power cycle to do the cold restart - it is achieved at the push of a buton.
@@ -5,6 +7,8 @@ The benefit is for computers without this capability so that the computer does n
 The project is based on my A2RAM128 Saturn clone card, as the circuitry is very similar. I only needed to add a diode and a resistor, reprogram the PLD and change the RAM for a ROM to hold some code.
 
 In essence, what the card does is:
+
+## Version 1
 
 1. When "normal" RESET is issued the card is deactivated (default state).
 2. When the external button is pressed, this drives the RESET line low as well as activates the card which leads to inhibiting the Apple2's ROM memory and activating the card's onboard ROM memory. Note that pressing the Reset key does not drive the button line low.
@@ -17,6 +21,8 @@ I hope it can be useful to someone.
 
 I have added a new functionality to the firmware - v2.0. If the button is pressed twice quickly within 1 second then the computer disables any anti-reset routines, performs a warm reset and drops to monitor. This feature can be useful for programs where there is an anti-reset implemented but the user wants to still break the program end explore what's in the memory. An example is the game Cannonball Blitz.
 
+## Version 2
+
 As a follow up I made a completely new design based on a DMA functionality - called A2DMA-RESET, the design files are in subfolder "DMA".
 
 Upon activation the card creates a single DMA write cycle to address $03F4, while the data bus is not driven, leading to a random byte being written to $03F4. Then, the DMA cycle is ended and the RESET line is asserted briefly which causes cold reboot.
@@ -28,3 +34,8 @@ As the data bus is not driven, there is theoretical chance that the correct valu
   - execute 2 DMA write cycles and writing the same byte twice in $03F3 and $03F4
 
 Note: Some Language Cards may remain active despite reset being asserted and this might be remedied by accessing $C081.
+
+## Version 3
+
+The V3 design is the most minimalistic one so far - it uses the same principle as V1, but does not have an EPROM as the PLD can actually hold a few bytes, just enough for a very short program to scramble the contents of $03F4 and then call the reset subroutine. With some clever programming and wiring it all boils down to a single PLD and a few passive elements now.
+

@@ -15,7 +15,7 @@ In essence, what the card does is:
 3. Upon release of the button, the $FFFC vector is fetched on the address bus, which starts the program on the ROM of the card.
 4. The program self-moves to $0300 and excutes from there, in the meantime destroying the correct checksum between $03F3 EOR #A5 at location $03F4.
 5. Next, the program disables the card ROM and enables the computer ROM by a softswitch - access to address $3003 (randomly chosen by me :))
-6. The program then performs a relative jump to $(FFFC) - the original reset vector as the computer's ROM is already active. As the $03F4 checksum does not check out - the computer performs a cold reboot.
+6. The program then performs a relative jump to $(FFFC) - the original reset vector as the computer's ROMs are already active. As the $03F4 checksum does not check out - the computer performs a cold reboot.
 
 I hope it can be useful to someone.
 

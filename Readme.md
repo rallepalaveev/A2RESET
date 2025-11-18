@@ -11,7 +11,7 @@ In essence, what the card does is:
 ## Version 1
 
 1. When "normal" RESET is issued the card is deactivated (default state).
-2. When the external button is pressed, this drives the RESET line low as well as activates the card which leads to inhibiting the Apple2's ROM memory and activating the card's onboard ROM memory. Note that pressing the Reset key does not drive the button line low.
+2. When the external button is pressed, this drives the RESET line low as well as activates the card which leads to inhibiting the Apple2's ROMs and activating the card's onboard ROM. Note that pressing the Reset key does not drive the button line low.
 3. Upon release of the button, the $FFFC vector is fetched on the address bus, which starts the program on the ROM of the card.
 4. The program self-moves to $0300 and excutes from there, in the meantime destroying the correct checksum between $03F3 EOR #A5 at location $03F4.
 5. Next, the program disables the card ROM and enables the computer ROM by a softswitch - access to address $3003 (randomly chosen by me :))

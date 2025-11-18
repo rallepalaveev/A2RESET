@@ -23,7 +23,7 @@ I have added a new functionality to the firmware - v2.0. If the button is presse
 
 ## Version 2
 
-As a follow up I made a completely new design based on a DMA functionality - called A2DMA-RESET, the design files are in subfolder "DMA".
+As a follow up I made a completely new design based on DMA functionality - called A2DMA-RESET, the design files are in subfolder "V2-DMA".
 
 Upon activation the card creates a single DMA write cycle to address $03F4, while the data bus is not driven, leading to a random byte being written to $03F4. Then, the DMA cycle is ended and the RESET line is asserted briefly which causes cold reboot.
 

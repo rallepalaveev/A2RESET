@@ -1,0 +1,75 @@
+Name      A2RESET.V3d;
+Partno    00;
+Date      06/02/24;
+Revision  01;
+Designer  Ralle Palaveev;
+Company   None;
+Assembly  None;
+Location  None;
+Device    g22V10;
+
+PIN 1      = BTN;
+PIN 2      = RW;
+PIN 3      = A15;
+PIN [11..4] = [A0..7];
+PIN 13     = RESET;
+PIN [14..21] = [D0..7];
+PIN 22     = !OE;
+PIN 23     = ACTIVE;
+
+/** Declarations and Intermediate Variable Definitions **/
+
+Field Address = [A5..0];
+Field Data = [D7..0];
+
+/** Logic Equations **/
+
+FA         = !A15 # A7 # !A6 # !A5 # A4;
+ACTIVE     = ACTIVE & (RESET # !BTN) & FA # !BTN;
+OE         = RW & ACTIVE & A15;
+[D0..7].oe = OE;
+
+Table  Address => Data {
+
+/* Address      Data */
+
+
+   'h'18    =>   'h'a0;
+   'h'19    =>   'h'fe;
+   'h'1a    =>   'h'c8;
+   'h'1b    =>   'h'a2;
+   'h'1c    =>   'h'5a;
+   'h'1d    =>   'h'ec;
+   'h'1e    =>   'h'f3;
+   'h'1f    =>   'h'03;
+   'h'20    =>   'h'8e;
+   'h'21    =>   'h'f3;
+   'h'22    =>   'h'03;
+   'h'23    =>   'h'd0;
+   'h'24    =>   'h'08;
+   'h'25    =>   'h'a9;
+   'h'26    =>   'h'69;
+   'h'27    =>   'h'8d;
+   'h'28    =>   'h'f2;
+   'h'29    =>   'h'03;
+   'h'2a    =>   'h'8c;
+   'h'2b    =>   'h'f3;
+   'h'2c    =>   'h'03;
+   'h'2d    =>   'h'8e;
+   'h'2e    =>   'h'f4;
+   'h'2f    =>   'h'03;
+   'h'30    =>   'h'e8;
+   'h'31    =>   'h'd0;
+   'h'32    =>   'h'fd;
+   'h'33    =>   'h'2c;
+   'h'34    =>   'h'30;
+   'h'35    =>   'h'c0;
+   'h'36    =>   'h'88;
+   'h'37    =>   'h'd0;
+   'h'38    =>   'h'f8;
+   'h'39    =>   'h'4c;
+   'h'3a    =>   'h'62;
+   'h'3b    =>   'h'fa;
+   'h'3c    =>   'h'd8;
+   'h'3d    =>   'h'ff;
+}
